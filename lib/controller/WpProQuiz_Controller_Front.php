@@ -221,6 +221,7 @@ class WpProQuiz_Controller_Front
 
         $view = new WpProQuiz_View_FrontQuiz();
 
+        $lockMapper = new WpProQuiz_Model_LockMapper();
         $quizMapper = new WpProQuiz_Model_QuizMapper();
         $questionMapper = new WpProQuiz_Model_QuestionMapper();
         $categoryMapper = new WpProQuiz_Model_CategoryMapper();

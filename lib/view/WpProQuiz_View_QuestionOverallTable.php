@@ -17,6 +17,7 @@ class WpProQuiz_View_QuestionOverallTable extends WP_List_Table
             'cb' => '<input type="checkbox" />',
             'name' => __('Name', 'wp-pro-quiz'),
             'category' => __('Category', 'wp-pro-quiz'),
+            'answer_type' => __('Type', 'wp-pro-quiz'),
             'points' => __('Points', 'wp-pro-quiz'),
         );
 
@@ -155,6 +156,7 @@ class WpProQuiz_View_QuestionOverallTable extends WP_List_Table
                 'quizId' => $q->getQuizId(),
                 'name' => $q->getTitle(),
                 'category' => $q->getCategoryName(),
+                'answer_type' => $q->getAnswerType(),
                 'points' => $q->getPoints(),
                 'sort' => $q->getSort()
             );

@@ -67,7 +67,7 @@ class WpProQuiz_Model_LockMapper extends WpProQuiz_Model_Mapper
         $c = $this->_wpdb->get_var(
             $this->_wpdb->prepare(
                 "SELECT COUNT(*) FROM {$this->_table}
-						WHERE quiz_id = %d AND lock_ip = %s AND user_id = %d AND lock_type = %d", $quizId, $lockIp,
+						WHERE quiz_id = %d AND lock_ip = %s AND user_id = %d AND (lock_type & %d)", $quizId, $lockIp,
                 $userId, $type));
 
         return $c !== null && $c > 0;
@@ -89,8 +89,7 @@ class WpProQuiz_Model_LockMapper extends WpProQuiz_Model_Mapper
         return $this->_wpdb->query(
             $this->_wpdb->prepare(
                 "DELETE FROM {$this->_table}
-					WHERE
-						quiz_id = %d AND (lock_date + %d) < %d AND lock_type = %d " . $user,
+                       WHERE quiz_id = %d AND (lock_date + %d) < %d AND (lock_type & %d) " . $user,
                 $quizId,
                 $lockTime,
                 $time,
@@ -101,14 +100,19 @@ class WpProQuiz_Model_LockMapper extends WpProQuiz_Model_Mapper
 
     public function deleteByQuizId($quizId, $type = false)
     {
-        $where = array('quiz_id' => $quizId);
-        $whereP = array('%d');
-
         if ($type !== false) {
-            $where = array('quiz_id' => $quizId, 'lock_type' => $type);
-            $whereP = array('%d', '%d');
+            return $this->_wpdb->query(
+                $this->_wpdb->prepare(
+                    "DELETE FROM {$this->_table}
+                           WHERE quiz_id = %d AND (lock_type & %d) ",
+                    $quizId,
+                    $type
+                )
+            );
+        } else {
+            $where = array('quiz_id' => $quizId);
+            $whereP = array('%d');
+            return $this->_wpdb->delete($this->_tableLock, $where, $whereP);
         }
-
-        return $this->_wpdb->delete($this->_tableLock, $where, $whereP);
     }
 }

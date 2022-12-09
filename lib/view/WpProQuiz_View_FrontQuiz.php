@@ -712,6 +712,10 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                     <?php printf(__('You have reached %s of %s points, (%s)', 'wp-pro-quiz'), '<span>0</span>',
                         '<span>0</span>', '<span>0</span>'); ?>
                 </p>
+                <hr/>
+                <p class="wpProQuiz_result">
+                    Leider haben Sie nicht bestanden
+                </p>
             <?php } ?>
             <?php if ($this->quiz->isShowAverageResult()) { ?>
                 <div class="wpProQuiz_resultTable">
@@ -862,7 +866,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
 
                         <?php if ($question->getCategoryId() && $this->quiz->isShowCategory()) { ?>
                             <div style="font-weight: bold; padding-top: 5px;">
-                                <?php printf(__('Category: %s', 'wp-pro-quiz'),
+                                <?php printf(__('Kategorie: %s', 'wp-pro-quiz'),
                                     esc_html($question->getCategoryName())); ?>
                             </div>
                         <?php } ?>

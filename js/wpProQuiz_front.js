@@ -1392,6 +1392,11 @@ wpProQuizReady(function () {
                 $pointFields.eq(1).text(config.globalPoints);
                 $pointFields.eq(2).text(results.comp.result + '%');
 
+                if (results.comp.points > 15) {
+                    var $quizResult = $e.find('.wpProQuiz_result');
+                    $quizResult.html('Du hast <b>' + results.comp.points + ' Fragen</b> richtig beantwortet und die <b>Note ' + (results.comp.points/2).toFixed(1) + '</b> erreicht. Herzlichen Glückwunsch zur bestandenen Theorie-Prüfung');
+                }
+
                 //Result-Text START
                 var $resultText = $e.find('.wpProQuiz_resultsList > li').eq(plugin.methode.findResultIndex(results.comp.result));
 
@@ -1460,6 +1465,32 @@ wpProQuizReady(function () {
                 var $questionList = e.values.item.find(globalNames.questionList);
                 var data = config.json[$questionList.data('question_id')];
                 results[data.id].solved = Number(e.values.fake ? results[data.id].solved : e.values.solved);
+            },
+
+            sendStartedQuiz: function () {
+                if (bitOptions.preview)
+                    return;
+
+                fetchAllAnswerData(results);
+
+                var formData = formClass.getFormData();
+
+                //plugin.methode.ajax({
+                //    action: 'wp_pro_quiz_completed_quiz',
+                //    quizId: config.quizId,
+                //    results: results,
+                //    forms: formData
+                //});
+
+                plugin.methode.ajax({
+                    action: 'wp_pro_quiz_admin_ajax',
+                    func: 'startedQuiz',
+                    data: {
+                        quizId: config.quizId,
+                        results: results,
+                        forms: formData
+                    }
+                });
             },
 
             sendCompletedQuiz: function () {
@@ -1719,6 +1750,8 @@ wpProQuizReady(function () {
                     if (json.averageResult != undefined) {
                         plugin.methode.setAverageResult(json.averageResult, true);
                     }
+
+                    plugin.methode.sendStartedQuiz();
                 });
 
                 //plugin.methode.ajax({
