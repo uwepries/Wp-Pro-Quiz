@@ -44,6 +44,7 @@ class WpProQuiz_Helper_QuestionImportDatabase
     protected function prepareQuestions($quizId)
     {
         $categories = $this->getCategories();
+        $categoryMapper = new WpProQuiz_Model_CategoryMapper();
 
         foreach ($this->questions as $question) {
             $question->setQuizId($quizId);
@@ -54,9 +55,20 @@ class WpProQuiz_Helper_QuestionImportDatabase
                 continue;
             }
 
-            if ($category = $this->findCategoryByName($categories, $name)) {
-                $question->setCategoryId($category->getCategoryId());
+            $category = $this->findCategoryByName($categories, $name);
+            if (!$category) {
+                $category = new WpProQuiz_Model_Category();
+                $category->setCategoryName($name);
+                $categoryMapper->save($category);
+                $categories = $this->getCategories();
+                $category = $this->findCategoryByName($categories, $name);
             }
+
+            if (!$category) {
+                continue;
+            }
+
+            $question->setCategoryId($category->getCategoryId());
         }
     }
 

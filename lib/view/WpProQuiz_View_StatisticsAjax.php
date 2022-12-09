@@ -47,8 +47,8 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                 <th scope="col" style="width: 100px;"><?php _e('Correct', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Incorrect', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Solved', 'wp-pro-quiz'); ?></th>
-                <th scope="col" style="width: 100px;"><?php _e('Grade', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Points', 'wp-pro-quiz'); ?></th>
+                <th scope="col" style="width: 100px;"><?php _e('Grade', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 60px;"><?php _e('Results', 'wp-pro-quiz'); ?></th>
             </tr>
             </thead>
@@ -63,7 +63,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                 <?php foreach ($this->historyModel as $model) {
                     /* @var $model WpProQuiz_Model_StatisticHistory */ ?>
                     <tr>
-                        <th>
+                        <td>
                             <a href="#" class="user_statistic"
                                data-ref_id="<?php echo $model->getStatisticRefId(); ?>"><?php echo $model->getUserName(); ?></a>
 
@@ -77,19 +77,21 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                                 </span>
                             </div>
 
-                        </th>
+                        </td>
                         <?php foreach ($model->getFormOverview() as $form) {
                             echo '<th>' . esc_html($form) . '</th>';
                         } ?>
-                        <th><?php echo $model->getFormatTime(); ?></th>
-                        <th style="color: green;"><?php echo $model->getFormatCorrect(); ?></th>
-                        <th style="color: red;"><?php echo $model->getFormatIncorrect(); ?></th>
-                        <th><?php echo $model->getSolvedCount() < 0 ? '---' : sprintf(__('%d of %d', 'wp-pro-quiz'),
+                        <td><?php echo $model->getFormatTime(); ?></td>
+                        <td style="color: green;"><?php echo $model->getFormatCorrect(); ?></td>
+                        <td style="color: red;"><?php echo $model->getFormatIncorrect(); ?></td>
+                        <td><?php echo $model->getSolvedCount() < 0 ? '---' : sprintf(__('%d of %d', 'wp-pro-quiz'),
                                 $model->getSolvedCount(),
-                                $model->getCorrectCount() + $model->getIncorrectCount()); ?></th>
-                        <th><?php echo number_format($model->getPoints()/2, 1, ',', ''); ?></th>
-                        <th><?php echo $model->getPoints(); ?></th>
-                        <th style="font-weight: bold;"><?php echo $model->getResult(); ?>%</th>
+                                $model->getCorrectCount() + $model->getIncorrectCount()); ?></td>
+                        <td><?php echo $model->getPoints(); ?></td>
+                        <td style="font-weight: bold;color: <?php echo ($model->getExamPassed() ? 'green' : 'red') ?>">
+                            <?php echo number_format($model->getGrade(), 1, ',', ''); ?>
+                        </td>
+                        <td style="font-weight: bold;"><?php echo $model->getResult(); ?>%</td>
                     </tr>
                 <?php }
             } ?>

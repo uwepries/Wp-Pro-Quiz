@@ -117,6 +117,15 @@ class WpProQuiz_Model_StatisticHistory extends WpProQuiz_Model_Model
         return $this->_points;
     }
 
+    public function getGrade()
+    {
+        return round($this->getPoints() / 2, 1);
+    }
+
+    public function getExamPassed() {
+        return $this->getGrade() >= 9;
+    }
+
     public function setResult($_result)
     {
         $this->_result = (float)$_result;

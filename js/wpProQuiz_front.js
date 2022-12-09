@@ -1392,7 +1392,7 @@ wpProQuizReady(function () {
                 $pointFields.eq(1).text(config.globalPoints);
                 $pointFields.eq(2).text(results.comp.result + '%');
 
-                if (results.comp.points > 15) {
+                if (results.comp.points >= 18) {
                     var $quizResult = $e.find('.wpProQuiz_result');
                     $quizResult.html('Du hast <b>' + results.comp.points + ' Fragen</b> richtig beantwortet und die <b>Note ' + (results.comp.points/2).toFixed(1) + '</b> erreicht. Herzlichen Glückwunsch zur bestandenen Theorie-Prüfung');
                 }
