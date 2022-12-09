@@ -378,6 +378,9 @@ msgstr "Eingetragen am"
 msgid "Points"
 msgstr "Punkte"
 
+msgid "Grade"
+msgstr "Note"
+
 #: lib/view/WpProQuiz_View_AdminToplist.php:60
 #: lib/view/WpProQuiz_View_FrontQuiz.php:87
 #: lib/view/WpProQuiz_View_Statistics.php:102
@@ -456,7 +459,7 @@ msgstr "Quiz abschließen"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:72
 msgid "Start quiz"
-msgstr "Quiz starten"
+msgstr "Prüfung starten"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:77
 msgid ""

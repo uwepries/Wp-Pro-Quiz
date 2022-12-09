@@ -47,6 +47,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                 <th scope="col" style="width: 100px;"><?php _e('Correct', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Incorrect', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Solved', 'wp-pro-quiz'); ?></th>
+                <th scope="col" style="width: 100px;"><?php _e('Grade', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Points', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 60px;"><?php _e('Results', 'wp-pro-quiz'); ?></th>
             </tr>
@@ -86,6 +87,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                         <th><?php echo $model->getSolvedCount() < 0 ? '---' : sprintf(__('%d of %d', 'wp-pro-quiz'),
                                 $model->getSolvedCount(),
                                 $model->getCorrectCount() + $model->getIncorrectCount()); ?></th>
+                        <th><?php echo number_format($model->getPoints()/2, 1, ',', ''); ?></th>
                         <th><?php echo $model->getPoints(); ?></th>
                         <th style="font-weight: bold;"><?php echo $model->getResult(); ?>%</th>
                     </tr>
