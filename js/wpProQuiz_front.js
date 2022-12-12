@@ -966,6 +966,14 @@ wpProQuizReady(function () {
             },
 
             startQuiz: function (loadData) {
+                var chk = jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0);
+                if (chk && !jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).checked) {
+                    jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).scrollIntoView();
+                    window.setTimeout(function() { alert('Bitte die Prüfungsordnung akzeptieren!'); }, 100);
+                    return chk;
+                };
+
+
                 if (quizStatus.loadLock) {
                     quizStatus.isQuizStart = 1;
 
