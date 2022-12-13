@@ -2085,18 +2085,15 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                                         <td style="vertical-align: top;">
                                             <ul>
                                                 <li><span>$userId</span> - <?php _e('User-ID', 'wp-pro-quiz'); ?></li>
-                                                <li><span>$username</span> - <?php _e('Username', 'wp-pro-quiz'); ?>
-                                                </li>
-                                                <li><span>$quizname</span> - <?php _e('Quiz-Name', 'wp-pro-quiz'); ?>
-                                                </li>
-                                                <li><span>$result</span> - <?php _e('Result in precent',
-                                                        'wp-pro-quiz'); ?></li>
-                                                <li><span>$points</span> - <?php _e('Reached points', 'wp-pro-quiz'); ?>
-                                                </li>
-                                                <li><span>$ip</span> - <?php _e('IP-address of the user',
-                                                        'wp-pro-quiz'); ?></li>
-                                                <li><span>$categories</span> - <?php _e('Category-Overview',
-                                                        'wp-pro-quiz'); ?></li>
+                                                <li><span>$username</span> - <?php _e('Username', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$first_name</span> - <?php _e('First name', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$last_name</span> - <?php _e('Last name', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$quizname</span> - <?php _e('Quiz-Name', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$result</span> - <?php _e('Result in precent', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$points</span> - <?php _e('Reached points', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$grade</span> - <?php _e('Grade', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$ip</span> - <?php _e('IP-address of the user', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$categories</span> - <?php _e('Category-Overview', 'wp-pro-quiz'); ?></li>
                                             </ul>
                                         </td>
                                         <td style="vertical-align: top;">
@@ -2237,18 +2234,15 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View
                                         <td style="vertical-align: top;">
                                             <ul>
                                                 <li><span>$userId</span> - <?php _e('User-ID', 'wp-pro-quiz'); ?></li>
-                                                <li><span>$username</span> - <?php _e('Username', 'wp-pro-quiz'); ?>
-                                                </li>
-                                                <li><span>$quizname</span> - <?php _e('Quiz-Name', 'wp-pro-quiz'); ?>
-                                                </li>
-                                                <li><span>$result</span> - <?php _e('Result in precent',
-                                                        'wp-pro-quiz'); ?></li>
-                                                <li><span>$points</span> - <?php _e('Reached points', 'wp-pro-quiz'); ?>
-                                                </li>
-                                                <li><span>$ip</span> - <?php _e('IP-address of the user',
-                                                        'wp-pro-quiz'); ?></li>
-                                                <li><span>$categories</span> - <?php _e('Category-Overview',
-                                                        'wp-pro-quiz'); ?></li>
+                                                <li><span>$username</span> - <?php _e('Username', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$first_name</span> - <?php _e('First name', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$last_name</span> - <?php _e('Last name', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$quizname</span> - <?php _e('Quiz-Name', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$result</span> - <?php _e('Result in precent', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$points</span> - <?php _e('Reached points', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$grade</span> - <?php _e('Grade', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$ip</span> - <?php _e('IP-address of the user', 'wp-pro-quiz'); ?></li>
+                                                <li><span>$categories</span> - <?php _e('Category-Overview', 'wp-pro-quiz'); ?></li>
                                             </ul>
                                         </td>
                                         <td style="vertical-align: top;">

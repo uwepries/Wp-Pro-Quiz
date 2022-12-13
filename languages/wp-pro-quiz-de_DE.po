@@ -768,6 +768,12 @@ msgstr "Benutzer-ID"
 msgid "Username"
 msgstr "Benutzername"
 
+msgid "First name"
+msgstr "Vorname"
+
+msgid "Last name"
+msgstr "Nachname"
+
 #: lib/view/WpProQuiz_View_GobalSettings.php:219
 #: lib/view/WpProQuiz_View_GobalSettings.php:287
 msgid "Quiz-Name"

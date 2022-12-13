@@ -119,7 +119,7 @@ class WpProQuiz_Model_StatisticHistory extends WpProQuiz_Model_Model
 
     public function getGrade()
     {
-        return round($this->getPoints() / 2, 1);
+        return round(($this->getResult()/100) * 15, 1);
     }
 
     public function getExamPassed() {
