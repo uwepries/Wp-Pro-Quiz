@@ -7,6 +7,7 @@ class WpProQuiz_Model_StatisticOverview extends WpProQuiz_Model_Model
     protected $_incorrectCount = 0;
     protected $_hintCount = 0;
     protected $_points = 0;
+    protected $_result = 0;
     protected $_userName = '';
     protected $_quizId = 0;
     protected $_userId = 0;
@@ -59,6 +60,27 @@ class WpProQuiz_Model_StatisticOverview extends WpProQuiz_Model_Model
     public function getPoints()
     {
         return $this->_points;
+    }
+
+    public function getGrade()
+    {
+        return round(($this->getResult()/100) * 15, 1);
+    }
+
+    public function getExamPassed() {
+        return $this->getGrade() >= 9;
+    }
+
+    public function setResult($_result)
+    {
+        $this->_result = (float)$_result;
+
+        return $this;
+    }
+
+    public function getResult()
+    {
+        return $this->_result;
     }
 
     public function setUserName($_userName)

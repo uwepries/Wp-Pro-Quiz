@@ -699,6 +699,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                 <th scope="col" style="width: 100px;"><?php _e('Hints used', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 100px;"><?php _e('Time', 'wp-pro-quiz'); ?> <span
                         style="font-size: x-small;">(hh:mm:ss)</span></th>
+                <th scope="col" style="width: 60px;"><?php _e('Grade', 'wp-pro-quiz'); ?></th>
                 <th scope="col" style="width: 60px;"><?php _e('Results', 'wp-pro-quiz'); ?></th>
             </tr>
             </thead>
@@ -731,6 +732,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                     } else {
                         $result = $time = $hintCount = $incorrect = $correct = $points = '---';
                     }
+                    $model->setResult($result);
 
                     ?>
 
@@ -761,6 +763,9 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                         <th><?php echo $hintCount ?></th>
                         <th><?php echo $time ?></th>
                         <th style="font-weight: bold;"><?php echo $result ?></th>
+                        <td style="font-weight: bold;color: <?php echo ($model->getExamPassed() ? 'green' : 'red') ?>">
+                            <?php echo number_format($model->getGrade(), 1, ',', ''); ?>
+                        </td>
                     </tr>
                 <?php }
             } ?>
