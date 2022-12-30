@@ -931,6 +931,10 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
         $ctr->emailNote($quiz, $data['results']['comp'], $categories, $forms,
             isset($data['forms']) ? $data['forms'] : array());
 
+        if (intval(get_user_meta(get_current_user_id(), "theorie{$quiz->getId()}", true)) === 0) {
+            update_user_meta(get_current_user_id(), "theorie{$quiz->getId()}", round(($data['results']['comp']['result'] / 100) * 15, 1));
+        }
+
         if (!$ctr->isPreLockQuiz($quiz)) {
             $statistics = new WpProQuiz_Controller_Statistics();
             $statistics->save($quiz);
