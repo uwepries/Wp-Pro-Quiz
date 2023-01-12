@@ -16,7 +16,7 @@ msgstr ""
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:96
 msgid "Do you really want to delete the quiz/question?"
-msgstr "Wollen Sie das Quiz/Frage wirklich löschen?"
+msgstr "Wollen Sie die Prüfung/Frage wirklich löschen?"
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:97
 msgid "Title is not filled!"
@@ -36,7 +36,7 @@ msgstr "Keine Antwort hinterlegt!"
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:101
 msgid "No quiz description filled!"
-msgstr "Quiz-Beschreibung nicht ausgefüllt!"
+msgstr "Prüfungs-Beschreibung nicht ausgefüllt!"
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:102
 msgid "The percent values in result text are incorrect."
@@ -52,7 +52,7 @@ msgstr "Keine Zahl im Feld \"Punkte\" oder kleiner 0"
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:105
 msgid "No quiz selected"
-msgstr "Kein Quiz ausgewählt"
+msgstr "Keine Prüfung ausgewählt"
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:106
 msgid "Do you really want to reset the statistic?"
@@ -131,7 +131,7 @@ msgstr "Datei kann nicht verarbeitet werden"
 #: lib/controller/WpProQuiz_Controller_Question.php:19
 #: lib/controller/WpProQuiz_Controller_Quiz.php:201
 msgid "Quiz not found"
-msgstr "Quiz nicht gefunden"
+msgstr "Prüfung nicht gefunden"
 
 #: lib/controller/WpProQuiz_Controller_Question.php:65
 msgid "questions copied"
@@ -166,25 +166,25 @@ msgstr "Frage hinzugefügt"
 #: lib/controller/WpProQuiz_Controller_Quiz.php:196
 #: lib/view/WpProQuiz_View_QuestionOverall.php:21
 msgid "Edit quiz"
-msgstr "Quiz bearbeiten"
+msgstr "Prüfung bearbeiten"
 
 #: lib/controller/WpProQuiz_Controller_Quiz.php:216
 msgid "Quiz edited"
-msgstr "Quiz bearbeitet"
+msgstr "Prüfung bearbeitet"
 
 #: lib/controller/WpProQuiz_Controller_Quiz.php:233
 #: lib/controller/WpProQuiz_Controller_Quiz.php:281
 msgid "Quiz title or quiz description are not filled"
-msgstr "Quiz Titel oder Quiz Beschreibung nicht ausgefüllt"
+msgstr "Prüfung Titel oder Prüfung Beschreibung nicht ausgefüllt"
 
 #: lib/controller/WpProQuiz_Controller_Quiz.php:253
 #: lib/controller/WpProQuiz_Controller_Quiz.php:267
 msgid "Create quiz"
-msgstr "Quiz erstellen"
+msgstr "Prüfung erstellen"
 
 #: lib/controller/WpProQuiz_Controller_Quiz.php:314
 msgid "Quiz deleted"
-msgstr "Quiz gelöscht"
+msgstr "Prüfung gelöscht"
 
 #: lib/controller/WpProQuiz_Controller_Statistics.php:44
 #: lib/view/WpProQuiz_View_QuestionEdit.php:77
@@ -236,7 +236,7 @@ msgstr "Datei ist nicht kompatibel mit der aktuellen Version"
 #: lib/model/WpProQuiz_Model_GlobalSettingsMapper.php:47
 #: lib/model/WpProQuiz_Model_GlobalSettingsMapper.php:79
 msgid "Wp-Pro-Quiz: One user completed a quiz"
-msgstr "Wp-Pro-Quiz: Ein Benutzer hat ein Quiz abgeschlossen"
+msgstr "LTZ-Prüfung: Ein Benutzer hat eine Prüfung abgeschlossen"
 
 #: lib/model/WpProQuiz_Model_GlobalSettingsMapper.php:49
 msgid ""
@@ -248,9 +248,9 @@ msgid ""
 "Result: $result\n"
 "\n"
 msgstr ""
-"Wp-Pro-Quiz\n"
+"LTZ-Prüfung\n"
 "\n"
-"Der Benutzer \"$username\" hat das Quiz \"$quizname\" beendet.\n"
+"Der Benutzer \"$username\" hat die Prüfung \"$quizname\" beendet.\n"
 "\n"
 "Punkte: $points\n"
 "Ergebnis: $result\n"
@@ -266,9 +266,9 @@ msgid ""
 "Result: $result\n"
 "\n"
 msgstr ""
-"Wp-Pro-Quiz\n"
+"LTZ-Prüfung\n"
 "\n"
-"Sie haben das Quiz \"$quizname\" abgeschlossen.\n"
+"Sie haben die Prüfung \"$quizname\" abgeschlossen.\n"
 "\n"
 "Punkte: $points\n"
 "Ergebnis: $result\n"
@@ -277,15 +277,15 @@ msgstr ""
 #: lib/plugin/WpProQuiz_Plugin_BpAchievementsV2.php:33
 #: lib/plugin/WpProQuiz_Plugin_BpAchievementsV3.php:6
 msgid "The user completed a quiz."
-msgstr "Der Benutzer beendet ein Quiz."
+msgstr "Der Benutzer beendet eine Prüfung."
 
 #: lib/plugin/WpProQuiz_Plugin_BpAchievementsV3.php:7
 msgid "The user completed a quiz with 100 percent."
-msgstr "Der Benutzer beendet ein Quiz mit 100 Prozent."
+msgstr "Der Benutzer beendet eine Prüfung mit 100 Prozent."
 
 #: lib/plugin/WpProQuiz_Plugin_BpAchievementsV3.php:18
 msgid "A powerful and beautiful quiz plugin for WordPress."
-msgstr "Eine leistungsstarkes und schönes Quiz-Plugin für WordPress."
+msgstr "Eine leistungsstarkes und schönes Prüfungs-Plugin für WordPress."
 
 #: lib/plugin/WpProQuiz_Plugin_BpAchievementsV3.php:21
 msgid "WP-Pro-Quiz"
@@ -438,7 +438,7 @@ msgstr "Zeitlimit"
 #: lib/view/WpProQuiz_View_QuizEdit.php:370
 #: lib/view/WpProQuiz_View_QuizEdit.php:599
 msgid "Quiz-summary"
-msgstr "Quiz-Zusammenfassung"
+msgstr "Prüfungs-Zusammenfassung"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:54
 #, php-format
@@ -455,7 +455,7 @@ msgstr "Fragen"
 #: lib/view/WpProQuiz_View_FrontQuiz.php:435
 #: lib/view/WpProQuiz_View_FrontQuiz.php:469
 msgid "Finish quiz"
-msgstr "Quiz abschließen"
+msgstr "Prüfung abschließen"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:72
 msgid "Start quiz"
@@ -465,13 +465,13 @@ msgstr "Prüfung starten"
 msgid ""
 "You have already completed the quiz before. Hence you can not start it again."
 msgstr ""
-"Sie haben das Quiz schon einmal absolviert. Daher können sie es nicht erneut "
+"Sie haben die Prüfung schon einmal absolviert. Daher können sie es nicht erneut "
 "starten."
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:82
 msgid "You have to finish following quiz, to start this quiz:"
 msgstr ""
-"Sie müssen erst folgende Quiz beenden um dieses Quiz starten zu können:"
+"Sie müssen erst folgende Prüfung beenden um diese Prüfung starten zu können:"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:90
 #, php-format
@@ -509,7 +509,7 @@ msgstr "Nicht kategorisiert"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:166
 msgid "Restart quiz"
-msgstr "Quiz erneut starten"
+msgstr "Prüfung erneut starten"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:168
 msgid "View questions"
@@ -777,7 +777,7 @@ msgstr "Nachname"
 #: lib/view/WpProQuiz_View_GobalSettings.php:219
 #: lib/view/WpProQuiz_View_GobalSettings.php:287
 msgid "Quiz-Name"
-msgstr "Quiz-Name"
+msgstr "Name der Prüfung"
 
 #: lib/view/WpProQuiz_View_GobalSettings.php:220
 #: lib/view/WpProQuiz_View_GobalSettings.php:288
@@ -942,7 +942,7 @@ msgstr "Import erfolgreich abgeschlossen"
 
 #: lib/view/WpProQuiz_View_Import.php:43
 msgid "Quiz name"
-msgstr "Quiz-Name"
+msgstr "Name der Prüfung"
 
 #: lib/view/WpProQuiz_View_Import.php:67
 #: lib/view/WpProQuiz_View_QuizOverall.php:147
@@ -968,7 +968,7 @@ msgid ""
 "The title is used for overview, it is not visible in quiz. If you leave the "
 "title field empty, a title will be generated."
 msgstr ""
-"Der Titel dient nur zur Übersicht, es wird nicht im Quiz angezeigt. Wird der "
+"Der Titel dient nur zur Übersicht, es wird nicht in der Prüfung angezeigt. Wird der "
 "Titel leer gelassen, wird ein Titel generiert."
 
 #: lib/view/WpProQuiz_View_QuestionEdit.php:35
@@ -1039,7 +1039,7 @@ msgstr "Nachricht bei korrekter / inkorrekter Antwort"
 
 #: lib/view/WpProQuiz_View_QuestionEdit.php:106
 msgid "Deactivated in quiz settings."
-msgstr "In den Quiz-Einstellungen deaktiviert."
+msgstr "In den Prüfungs-Einstellungen deaktiviert."
 
 #: lib/view/WpProQuiz_View_QuestionEdit.php:111
 msgid "Message with the correct answer"
@@ -1301,14 +1301,14 @@ msgstr "Sortierung speichern"
 #: lib/view/WpProQuiz_View_QuestionOverall.php:88
 #: lib/view/WpProQuiz_View_QuestionOverall.php:93
 msgid "Copy questions from another Quiz"
-msgstr "Fragen aus einem anderen Quiz kopieren."
+msgstr "Fragen aus einer anderen Prüfung kopieren."
 
 #: lib/view/WpProQuiz_View_QuestionOverall.php:94
 msgid ""
 "Here you can copy questions from another quiz into this quiz. (Multiple "
 "selection enabled)"
 msgstr ""
-"Hier können Sie Fragen aus einem anderen Quiz in dieses Quiz kopieren. "
+"Hier können Sie Fragen aus einer anderen Prüfung in diese Prüfung kopieren. "
 "(Mehrfachauswahl aktiviert)"
 
 #: lib/view/WpProQuiz_View_QuestionOverall.php:106
@@ -1317,11 +1317,11 @@ msgstr "Fragen kopieren"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:18
 msgid "Quiz title"
-msgstr "Quiz Titel"
+msgstr "Titel der Prüfung"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:30
 msgid "Hide quiz title"
-msgstr "Quiz Titel verstecken"
+msgstr "Titel der Prüfung verstecken"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:35
 msgid "Hide title"
@@ -1329,16 +1329,16 @@ msgstr "Titel verstecken"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:42
 msgid "The title serves as quiz heading."
-msgstr "Der Titel dient als Quiz Überschrift."
+msgstr "Der Titel dient als Prüfungs-Überschrift."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:49
 #: lib/view/WpProQuiz_View_QuizEdit.php:54
 msgid "Hide \"Restart quiz\" button"
-msgstr "Button \"Quiz erneut starten\" verstecken"
+msgstr "Button \"Prüfung erneut starten\" verstecken"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:61
 msgid "Hide the \"Restart quiz\" button in the Frontend."
-msgstr "Versteckt den Button \"Quiz erneut starten\" im Frontend."
+msgstr "Versteckt den Button \"Prüfung erneut starten\" im Frontend."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:68
 #: lib/view/WpProQuiz_View_QuizEdit.php:73
@@ -1380,7 +1380,7 @@ msgid ""
 "over administration menu. (internal statistics)"
 msgstr ""
 "Statistik über richtige oder falsche Antworten. Statistik wird nur beim "
-"vollständigen abschließen des Quiz gespeichert, nicht nach jeder Frage. Die "
+"vollständigen abschließen der Prüfung gespeichert, nicht nach jeder Frage. Die "
 "Statistik ist nur über das Adminmenü einsehbar (interne Statistik)"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:156
@@ -1403,15 +1403,15 @@ msgstr ""
 #: lib/view/WpProQuiz_View_QuizEdit.php:175
 #: lib/view/WpProQuiz_View_QuizEdit.php:181
 msgid "Execute quiz only once"
-msgstr "Quiz nur einmal ausführen"
+msgstr "Prüfung nur einmal ausführen"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:189
 msgid ""
 "If you activate this option, the user can complete the quiz only once. "
 "Afterwards the quiz is blocked for this user."
 msgstr ""
-"Wenn diese Option aktivieren, kann ein Benutzer das Quiz nur einmal "
-"absolvieren, danach wird das Quiz für diesen Benutzer gesperrt."
+"Wenn diese Option aktivieren, kann ein Benutzer die Prüfung nur einmal "
+"absolvieren, danach wird die Prüfung für diesen Benutzer gesperrt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:193
 msgid "This option applies to:"
@@ -1500,24 +1500,24 @@ msgid ""
 "If you enable this option, you can choose quiz, which user have to finish "
 "before he can start this quiz."
 msgstr ""
-"Wenn Sie diese Option aktivieren, können Sie wählen welches Quiz ein "
-"Benutzer vorher abgeschlossen habe muss, bevor er dieses Quiz starten kann."
+"Wenn Sie diese Option aktivieren, können Sie wählen welche Prüfung ein "
+"Benutzer vorher abgeschlossen habe muss, bevor er diese Prüfung starten kann."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:285
 msgid ""
 "In all selected quizzes statistic function have to be active. If it is not "
 "it will be activated automatically."
 msgstr ""
-"Bei allen ausgewählten Quiz muss die Statistik-Funktion aktiviert sein, ist "
+"Bei allen ausgewählten Prüfungen muss die Statistik-Funktion aktiviert sein, ist "
 "dies nicht der Fall wird diese automatisch aktiviert."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:290
 msgid "Quiz"
-msgstr "Quiz"
+msgstr "Prüfung"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:292
 msgid "Prerequisites (This quiz have to be finished)"
-msgstr "Voraussetzung (Diese Quiz muss vorher abgeschlossen wurden sein.)"
+msgstr "Voraussetzung (Diese Prüfung muss vorher abgeschlossen wurden sein.)"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:331
 #: lib/view/WpProQuiz_View_QuizEdit.php:336
@@ -1530,13 +1530,13 @@ msgid ""
 "Add at the top of the quiz a question overview, which allows easy "
 "navigation. Additional questions can be marked \"to review\"."
 msgstr ""
-"Fügt oberhalb des Quiz eine Frage-Übersicht ein, die eine leichte Navigation "
+"Fügt oberhalb der Prüfung eine Frage-Übersicht ein, die eine leichte Navigation "
 "erlaubt. Desweitern können Fragen als \"vorgemerkt\" markiert werden."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:346
 msgid "Additional quiz overview will be displayed, before quiz is finished."
 msgstr ""
-"Zusätzlich wird vor dem abschließen des Quiz eine Quiz-Zusammenfassung "
+"Zusätzlich wird vor dem abschließen der Prüfung eine Prüfungs-Zusammenfassung "
 "angezeigt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:377
@@ -1544,7 +1544,7 @@ msgid ""
 "If you enalbe this option, no quiz overview will be displayed, before "
 "finishing quiz."
 msgstr ""
-"Wenn Sie diese Option aktivieren, wird vor dem Abschluss des Quiz keine Quiz-"
+"Wenn Sie diese Option aktivieren, wird vor dem Abschluss der Prüfung keine Prüfungs-"
 "Zusammenfassung angezeigt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:396
@@ -1576,7 +1576,7 @@ msgid ""
 "quiz."
 msgstr ""
 "Wenn Sie diese Option aktivieren, werden Sie informiert sobald ein Benutzer "
-"dieses Quiz abschließt."
+"diese Prüfung abschließt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:426
 #: lib/view/WpProQuiz_View_QuizEdit.php:448
@@ -1595,15 +1595,15 @@ msgid ""
 "user. (only registered users)"
 msgstr ""
 "Wenn Sie diese Option aktivieren, wird an den jeweiligen Benutzer eine E-"
-"Mail mit seinem Quiz-Ergebnis geschickt. (nur bei registrieren Benutzern)"
+"Mail mit seinem Prüfungs-Ergebnis geschickt. (nur bei registrieren Benutzern)"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:462
 msgid "Quiz description"
-msgstr "Quiz Beschreibung"
+msgstr "Beschreibung der Prüfung"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:465
 msgid "This text will be displayed before start of the quiz."
-msgstr "Dieser Text wird vor dem Starten des Quizes angezeigt."
+msgstr "Dieser Text wird vor dem Starten der Prüfung angezeigt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:473
 msgid "Results text"
@@ -1614,7 +1614,7 @@ msgid ""
 "This text will be displayed at the end of the quiz (in results). (this text "
 "is optional)"
 msgstr ""
-"Dieser Text wird beim Beenden (im Ergebnis) des Quizes angezeigt (Dieser "
+"Dieser Text wird beim Beenden (im Ergebnis) der Prüfung angezeigt (Dieser "
 "Text ist optional)"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:480
@@ -1635,7 +1635,7 @@ msgid ""
 "Percentages refer to the total score of the quiz. (Current total %d points "
 "in %d questions."
 msgstr ""
-"Prozente beziehen sich auf die Gesamtpunktzahl des Quiz (Aktuell: insgesamt "
+"Prozente beziehen sich auf die Gesamtpunktzahl der Prüfung (Aktuell: insgesamt "
 "%d Punkte bei %d Fragen)"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:493
@@ -1717,15 +1717,15 @@ msgstr ""
 #: lib/view/WpProQuiz_View_QuizEdit.php:634
 #: lib/view/WpProQuiz_View_QuizEdit.php:639
 msgid "Hide quiz time - display"
-msgstr "Verstecke Quiz-Zeit - Anzeige"
+msgstr "Verstecke Prüfungs-Zeit - Anzeige"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:646
 msgid ""
 "If you enable this option, the time for finishing the quiz won't be "
 "displayed on the results page anymore."
 msgstr ""
-"Wenn Sie diese Option aktivieren, wird die Zeit für die Beantwortung des "
-"Quiz nicht mehr auf der Ergebnisseite angezeigt."
+"Wenn Sie diese Option aktivieren, wird die Zeit für die Beantwortung der "
+"Prüfung nicht mehr auf der Ergebnisseite angezeigt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:660
 #: lib/view/WpProQuiz_View_QuizEdit.php:665
@@ -1751,7 +1751,7 @@ msgstr "Punkte anzeigen"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:714
 msgid "Shows in quiz, how many points are reachable for respective question."
-msgstr "Zeigt im Quiz an, wieviel Punkte es für die jeweilige Frage gibt."
+msgstr "Zeigt in der Prüfung an, wieviel Punkte es für die jeweilige Frage gibt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:721
 #: lib/view/WpProQuiz_View_QuizEdit.php:726
@@ -1879,7 +1879,7 @@ msgstr "Einträge"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:944
 msgid "Automatically display leaderboard in quiz result"
-msgstr "Bestenliste automatisch im Quiz Ergebnis anzeigen"
+msgstr "Bestenliste automatisch im Prüfungs-Ergebnis anzeigen"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:948
 msgid "Where should leaderboard be displayed:"
@@ -1899,7 +1899,7 @@ msgstr "in einem Button"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:986
 msgid "Quiz-Mode"
-msgstr "Quiz-Mode"
+msgstr "Prüfungs-Modus"
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:991
 msgid "Normal"
@@ -1922,8 +1922,8 @@ msgid ""
 "Displays all questions sequentially, \"right\" or \"false\" will be "
 "displayed at the end of the quiz."
 msgstr ""
-"Zeigt alle Fragen nacheinander, \"richtig\" oder \"falsch\" wird am Ende des "
-"Quiz angezeigt."
+"Zeigt alle Fragen nacheinander, \"richtig\" oder \"falsch\" wird am Ende der "
+"Prüfung angezeigt."
 
 #: lib/view/WpProQuiz_View_QuizEdit.php:1009
 msgid "Allows to use the back button in a question."
@@ -1943,7 +1943,7 @@ msgstr ""
 
 #: lib/view/WpProQuiz_View_QuizOverall.php:32
 msgid "Quiz overview"
-msgstr "Quiz Übersicht"
+msgstr "Prüfungs-Übersicht"
 
 #: lib/view/WpProQuiz_View_QuizOverall.php:34
 msgid "In case of problems"
@@ -1952,7 +1952,7 @@ msgstr "Bei Problemen"
 #: lib/view/WpProQuiz_View_QuizOverall.php:36
 msgid "If quiz doesn't work in front-end, please try following:"
 msgstr ""
-"Wenn das Quiz im Front-End nicht funktioniert, versucht bitte folgendes:"
+"Wenn die Prüfung im Front-End nicht funktioniert, versucht bitte folgendes:"
 
 #: lib/view/WpProQuiz_View_QuizOverall.php:46
 msgid "Style Manager"
@@ -1981,7 +1981,7 @@ msgstr "Vorschau"
 
 #: lib/view/WpProQuiz_View_QuizOverall.php:117
 msgid "Add quiz"
-msgstr "Quiz hinzufügen"
+msgstr "Prüfung hinzufügen"
 
 #: lib/view/WpProQuiz_View_QuizOverall.php:121
 #: lib/view/WpProQuiz_View_QuizOverall.php:126
@@ -1993,7 +1993,7 @@ msgid ""
 "Choose the respective question, which you would like to export and press on "
 "\"Start export\""
 msgstr ""
-"Wählen Sie oben die entsprechen Quiz aus, die Sie exportieren möchten und "
+"Wählen Sie oben die entsprechende Prüfung aus, die Sie exportieren möchten und "
 "klicken Sie anschliessen auf \"Export starten\""
 
 #: lib/view/WpProQuiz_View_QuizOverall.php:131
@@ -2014,7 +2014,7 @@ msgstr "Maximal %d MiB"
 #: lib/view/WpProQuiz_View_Statistics.php:23
 #, php-format
 msgid "Quiz: %s - Statistics"
-msgstr "Quiz: %s - Statistik"
+msgstr "Prüfung: %s - Statistik"
 
 #: lib/view/WpProQuiz_View_Statistics.php:28
 msgid "Stats not enabled"
@@ -2086,7 +2086,7 @@ msgstr "Alle Statistiken zurücksetzten"
 
 #: lib/view/WpProQuiz_View_Statistics.php:205
 msgid "Show only users, who solved the quiz:"
-msgstr "Nur Benutzer anzeigen die das Quiz absolviert haben:"
+msgstr "Nur Benutzer anzeigen, die die Prüfung absolviert haben:"
 
 #: lib/view/WpProQuiz_View_StyleManager.php:15
 msgid "Front"

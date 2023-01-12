@@ -966,6 +966,11 @@ wpProQuizReady(function () {
             },
 
             startQuiz: function (loadData) {
+                console.log('startQuiz');
+                if (!confirm('Möchtest Du die Prüfung wirklich starten?')) {
+                    return;
+                }
+
                 var chk = jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0);
                 if (chk && !jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).checked) {
                     jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).scrollIntoView();
@@ -1371,6 +1376,11 @@ wpProQuizReady(function () {
             },
 
             finishQuiz: function (timeover) {
+                console.log('finishQuiz');
+                if (!confirm('Möchtest Du die Prüfung wirklich abschließen?')) {
+                    return;
+                }
+
                 questionTimer.questionStop();
                 questionTimer.stopQuiz();
                 timelimit.stop();
