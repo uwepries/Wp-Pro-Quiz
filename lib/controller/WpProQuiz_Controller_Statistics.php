@@ -91,9 +91,9 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
             $lockMapper = new WpProQuiz_Model_LockMapper();
             $lockTime = $quiz->getStatisticsIpLock() * 60;
 
-            $lockMapper->deleteOldLock($lockTime, $quiz->getId(), time(), WpProQuiz_Model_Lock::TYPE_STATISTIC);
+            $lockMapper->deleteOldLock($lockTime, $quiz->getId(), time(), WpProQuiz_Model_Lock::TYPE_STATISTICS);
 
-            if ($lockMapper->isLock($quizId, $lockIp, $userId, WpProQuiz_Model_Lock::TYPE_STATISTIC)) {
+            if ($lockMapper->isLock($quizId, $lockIp, $userId, WpProQuiz_Model_Lock::TYPE_STATISTICS)) {
                 return false;
             }
 
@@ -101,7 +101,7 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
             $lock->setQuizId($quizId)
                 ->setLockIp($lockIp)
                 ->setUserId($userId)
-                ->setLockType(WpProQuiz_Model_Lock::TYPE_STATISTIC)
+                ->setLockType(WpProQuiz_Model_Lock::TYPE_STATISTICS)
                 ->setLockDate(time());
 
             $lockMapper->insert($lock);
@@ -397,6 +397,7 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
         }
 
         $statisticRefMapper = new WpProQuiz_Model_StatisticRefMapper();
+        $lockMapper = new WpProQuiz_Model_LockMapper();
 
         switch ($data['type']) {
             case 0: //RefId or UserId
@@ -405,6 +406,9 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
                 } else {
                     if ($data['userId'] != '') {
                         $statisticRefMapper->deleteByUserIdQuizId($data['userId'], $data['quizId']);
+                        # UWE
+                        $lockTime = /*$quiz->getStatisticsIpLock()*/1 * 60;
+                        $lockMapper->deleteOldLock($lockTime, $data['quizId'], time(), WpProQuiz_Model_Lock::TYPE_STATISTICS|WpProQuiz_Model_Lock::TYPE_QUIZ_STARTED|WpProQuiz_Model_Lock::TYPE_QUIZ_FINISHED,$data['userId']);
                     }
                 }
                 break;

@@ -8,7 +8,7 @@ class WpProQuiz_Model_Lock extends WpProQuiz_Model_Model
     protected $_userId;
     protected $_lockType;
 
-    const TYPE_STATISTIC = 1;       # 0001
+    const TYPE_STATISTICS = 1;      # 0001
     const TYPE_QUIZ_STARTED = 2;    # 0010
     const TYPE_QUIZ_FINISHED = 4;   # 0100
 
