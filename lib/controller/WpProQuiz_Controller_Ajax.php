@@ -69,6 +69,7 @@ class WpProQuiz_Controller_Ajax
             'resetLock' => array('WpProQuiz_Controller_Quiz', 'ajaxResetLock'),
             'adminToplist' => array('WpProQuiz_Controller_Toplist', 'ajaxAdminToplist'),
             'startedQuiz' => array('WpProQuiz_Controller_Quiz', 'ajaxStartedQuiz'),
+            'progressedQuiz' => array('WpProQuiz_Controller_Quiz', 'ajaxProgressedQuiz'),
             'completedQuiz' => array('WpProQuiz_Controller_Quiz', 'ajaxCompletedQuiz'),
             'quizCheckLock' => array('WpProQuiz_Controller_Quiz', 'ajaxQuizCheckLock'),
             'addInToplist' => array('WpProQuiz_Controller_Toplist', 'ajaxAddInToplist'),

@@ -971,6 +971,11 @@ wpProQuizReady(function () {
                     return;
                 }
 
+                window.addEventListener("beforeunload", (event) => {
+                    event.preventDefault();
+                    return (event.returnValue = 'Are you sure you want to exit?'); /* Need this for pseudo elements to work! */
+                });
+
                 var chk = jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0);
                 if (chk && !jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).checked) {
                     jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).scrollIntoView();
@@ -1381,6 +1386,11 @@ wpProQuizReady(function () {
                     return;
                 }
 
+                window.removeEventListener("beforeunload", (event) => {
+                    event.preventDefault();
+                    return (event.returnValue = ''); /* Need this for pseudo elements to work! */
+                });
+
                 questionTimer.questionStop();
                 questionTimer.stopQuiz();
                 timelimit.stop();
@@ -1503,6 +1513,32 @@ wpProQuizReady(function () {
                 plugin.methode.ajax({
                     action: 'wp_pro_quiz_admin_ajax',
                     func: 'startedQuiz',
+                    data: {
+                        quizId: config.quizId,
+                        results: results,
+                        forms: formData
+                    }
+                });
+            },
+
+            sendProgressedQuiz: function () {
+                if (bitOptions.preview)
+                    return;
+
+                fetchAllAnswerData(results);
+
+                var formData = formClass.getFormData();
+
+                //plugin.methode.ajax({
+                //    action: 'wp_pro_quiz_completed_quiz',
+                //    quizId: config.quizId,
+                //    results: results,
+                //    forms: formData
+                //});
+
+                plugin.methode.ajax({
+                    action: 'wp_pro_quiz_admin_ajax',
+                    func: 'progressedQuiz',
                     data: {
                         quizId: config.quizId,
                         results: results,
@@ -2023,6 +2059,9 @@ wpProQuizReady(function () {
                         alert(WpProQuizGlobal.questionNotSolved);
                         return false;
                     }
+
+                    // TODO: send current state
+                    plugin.methode.sendProgressedQuiz();
 
                     plugin.methode.nextQuestion();
                 });

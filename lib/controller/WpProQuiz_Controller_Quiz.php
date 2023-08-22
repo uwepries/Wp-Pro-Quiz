@@ -902,6 +902,15 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
         return json_encode(array(!$lockIp, !$lockCookie, $lock_insert_id));
     }
 
+    public static function ajaxProgressedQuiz($data) {
+        $now = new DateTime('now');
+        $now_f = $now->format('H:i:s');
+        $today_f = $now->format('Y-m-d');
+        $message = json_encode(['user_id' => get_current_user_id(), 'data' => $data]);
+        error_log("{$now_f}: {$message}\n", 3, __DIR__ . "/../../logs/{$today_f}.log");
+
+        return json_encode(array());
+    }
 
     public static function ajaxCompletedQuiz($data)
     {
@@ -931,8 +940,17 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
         $ctr->emailNote($quiz, $data['results']['comp'], $categories, $forms,
             isset($data['forms']) ? $data['forms'] : array());
 
+        $note = round(($data['results']['comp']['result'] / 100) * 15, 1);
+
+        # Deprecated user meta container
         if (intval(get_user_meta(get_current_user_id(), "theorie{$quiz->getId()}", true)) === 0) {
-            update_user_meta(get_current_user_id(), "theorie{$quiz->getId()}", round(($data['results']['comp']['result'] / 100) * 15, 1));
+            update_user_meta(get_current_user_id(), "theorie{$quiz->getId()}", $note);
+        }
+
+        # Abschlussprüfung Hufpflegekurs bmg
+        if ($quiz->getId() == 2 && intval(get_user_meta(get_current_user_id(), "h_theorie{$quiz->getId()}", true)) === 0) {
+            update_user_meta(get_current_user_id(), "h_theorie{$quiz->getId()}", $note);
+            update_user_meta(get_current_user_id(), "ch_theorie{$quiz->getId()}", $note);
         }
 
         if (!$ctr->isPreLockQuiz($quiz)) {

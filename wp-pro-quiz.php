@@ -102,3 +102,25 @@ function wpProQuiz_achievementsV3()
 }
 
 add_action('dpa_ready', 'wpProQuiz_achievementsV3');
+
+/**
+ * Discovers which tests to run and runs them.
+ *
+ * @param array    $actions
+ * @param \WP_User $user
+ *
+ * @return array
+ */
+function wpProQuiz_custom_filter_user_row_actions( array $actions, WP_User $user ) {
+	#if ( ! ( $link = self::send_welcome_email_url( $user ) ) ) {
+	#	return $actions;
+	#}
+    $link = '#';
+
+	#$actions['send_welcome_email'] = '<a href="' . $link . '">' . esc_html__( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
+	$actions['wpProQuiz_send_welcome_email'] = '<a href="' . $link . '">' . esc_html__( 'Lock zurücksetzen', 'wp-pro-quiz' ) . '</a>';
+
+	return $actions;
+}
+
+add_filter( 'user_row_actions',  'wpProQuiz_custom_filter_user_row_actions', 10, 2 );
