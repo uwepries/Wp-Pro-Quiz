@@ -606,7 +606,7 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
             '$quizname' => $quiz->getName(),
             '$result' => $result['result'] . '%',
             '$points' => $result['points'],
-            '$grade' => number_format((isset($result['grade']) ? $result['grade'] : $result['points'] / 2), 1, ',', ''),
+            '$grade' => number_format((isset($result['grade']) ? $result['grade'] : (($result['result'] / 100) * 15.0)), 1, ',', ''),
             '$ip' => filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP),
             '$categories' => empty($result['cats']) ? '' : $this->setCategoryOverview($result['cats'], $categories)
         );

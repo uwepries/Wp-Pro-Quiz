@@ -1381,8 +1381,8 @@ wpProQuizReady(function () {
             },
 
             finishQuiz: function (timeover) {
-                console.log('finishQuiz');
-                if (!confirm('Möchtest Du die Prüfung wirklich abschließen?')) {
+                console.log('finishQuiz', timeover);
+                if (!timeover && !confirm('Möchtest Du die Prüfung wirklich abschließen?')) {
                     return;
                 }
 
