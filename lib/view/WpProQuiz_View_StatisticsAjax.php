@@ -65,7 +65,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                     <tr>
                         <td>
                             <a href="#" class="user_statistic"
-                               data-ref_id="<?php echo $model->getStatisticRefId(); ?>"><?php echo $model->getUserName(); ?></a>
+                               data-ref_id="<?php echo $model->getStatisticRefId(); ?>"><?php echo esc_html($model->getUserName()); ?></a>
 
                             <div class="row-actions">
 							<span>

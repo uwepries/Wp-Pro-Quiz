@@ -51,7 +51,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                                 <?php _e('The title is used for overview, it is not visible in quiz. If you leave the title field empty, a title will be generated.',
                                     'wp-pro-quiz'); ?>
                             </p>
-                            <input name="title" class="regular-text" value="<?php echo $this->question->getTitle(); ?>"
+                            <input name="title" class="regular-text" value="<?php echo esc_attr($this->question->getTitle()); ?>"
                                    type="text">
                         </div>
                     </div>
@@ -121,7 +121,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                                     </option>
                                     <?php
                                     foreach ($this->categories as $cat) {
-                                        echo '<option ' . ($this->question->getCategoryId() == $cat->getCategoryId() ? 'selected="selected"' : '') . ' value="' . $cat->getCategoryId() . '">' . $cat->getCategoryName() . '</option>';
+                                        echo '<option ' . ($this->question->getCategoryId() == $cat->getCategoryId() ? 'selected="selected"' : '') . ' value="' . $cat->getCategoryId() . '">' . esc_html($cat->getCategoryName()) . '</option>';
                                     }
                                     ?>
                                 </select>
@@ -404,7 +404,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                         </td>
                         <td style="padding: 5px; vertical-align: top;">
                             <textarea rows="2" cols="50" class="large-text wpProQuiz_text" name="answerData[][answer]"
-                                      style="resize:vertical;"><?php echo $d->getAnswer(); ?></textarea>
+                                      style="resize:vertical;"><?php echo esc_textarea($d->getAnswer()); ?></textarea>
                         </td>
                     </tr>
                     </tbody>
@@ -451,11 +451,11 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                         </td>
                         <td style="border-right: 1px solid #9E9E9E; padding: 5px; vertical-align: top;">
                             <textarea rows="4" name="answerData[][answer]" class="wpProQuiz_text"
-                                      style="width: 100%; resize:vertical;"><?php echo $d->getAnswer(); ?></textarea>
+                                      style="width: 100%; resize:vertical;"><?php echo esc_textarea($d->getAnswer()); ?></textarea>
                         </td>
                         <td style="padding: 5px; vertical-align: top;">
                             <textarea rows="4" name="answerData[][sort_string]" class="wpProQuiz_text"
-                                      style="width: 100%; resize:vertical;"><?php echo $d->getSortString(); ?></textarea>
+                                      style="width: 100%; resize:vertical;"><?php echo esc_textarea($d->getSortString()); ?></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -524,7 +524,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
                         </td>
                         <td style="padding: 5px; vertical-align: top;">
                             <textarea rows="2" cols="100" class="large-text wpProQuiz_text" name="answerData[][answer]"
-                                      style="resize:vertical;"><?php echo $d->getAnswer(); ?></textarea>
+                                      style="resize:vertical;"><?php echo esc_textarea($d->getAnswer()); ?></textarea>
                         </td>
                     </tr>
                     </tbody>
@@ -554,7 +554,7 @@ class WpProQuiz_View_QuestionEdit extends WpProQuiz_View_View
 
             <p style="border-bottom:1px dotted #ccc;">
                 <textarea rows="6" cols="100" class="large-text"
-                          name="answerData[][answer]"><?php echo $single->getAnswer(); ?></textarea>
+                          name="answerData[][answer]"><?php echo esc_textarea($single->getAnswer()); ?></textarea>
             </p>
         </div>
         <?php

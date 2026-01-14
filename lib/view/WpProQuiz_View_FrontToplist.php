@@ -14,7 +14,7 @@ class WpProQuiz_View_FrontToplist extends WpProQuiz_View_View
         <div style="margin-bottom: 30px; margin-top: 10px;" class="wpProQuiz_toplist"
              data-quiz_id="<?php echo $this->quiz->getId(); ?>">
             <?php if (!$this->inQuiz) { ?>
-                <h2><?php _e('Leaderboard', 'wp-pro-quiz'); ?>: <?php echo $this->quiz->getName(); ?></h2>
+                <h2><?php _e('Leaderboard', 'wp-pro-quiz'); ?>: <?php echo esc_html($this->quiz->getName()); ?></h2>
             <?php } ?>
             <table class="wpProQuiz_toplistTable">
                 <caption><?php printf(__('maximum of %s points', 'wp-pro-quiz'), $this->points); ?></caption>

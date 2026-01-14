@@ -87,7 +87,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
             <?php
 
             if (!$this->quiz->isTitleHidden()) {
-                echo '<h2>', $this->quiz->getName(), '</h2>';
+                echo '<h2>', esc_html($this->quiz->getName()), '</h2>';
             }
 
             $this->showTimeLimitBox();
@@ -206,7 +206,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
             <?php
 
             if (!$this->quiz->isTitleHidden()) {
-                echo '<h2>', $this->quiz->getName(), '</h2>';
+                echo '<h2>', esc_html($this->quiz->getName()), '</h2>';
             }
 
             $this->showTimeLimitBox();
