@@ -6,9 +6,11 @@ class WpProQuiz_Model_ToplistMapper extends WpProQuiz_Model_Mapper
     public function countFree($quizId, $name, $email, $ip, $clearTime = null)
     {
         $c = '';
+        $args = array($quizId, $name, $email, $ip);
 
         if ($clearTime !== null) {
-            $c = 'AND date >= ' . (time() - $clearTime);
+            $c = 'AND date >= %d';
+            $args[] = time() - $clearTime;
         }
 
         $flooding = time() - 15;
@@ -18,10 +20,7 @@ class WpProQuiz_Model_ToplistMapper extends WpProQuiz_Model_Mapper
                 "SELECT COUNT(*)
 					FROM {$this->_tableToplist} 
 					WHERE quiz_id = %d AND (name = %s OR email = %s OR (ip = %s AND date >= {$flooding})) " . $c,
-                $quizId,
-                $name,
-                $email,
-                $ip
+                $args
             )
         );
     }
@@ -29,9 +28,11 @@ class WpProQuiz_Model_ToplistMapper extends WpProQuiz_Model_Mapper
     public function countUser($quizId, $userId, $clearTime = null)
     {
         $c = '';
+        $args = array($quizId, $userId);
 
         if ($clearTime !== null) {
-            $c = 'AND date >= ' . (time() - $clearTime);
+            $c = 'AND date >= %d';
+            $args[] = time() - $clearTime;
         }
 
         return $this->_wpdb->get_var(
@@ -39,8 +40,7 @@ class WpProQuiz_Model_ToplistMapper extends WpProQuiz_Model_Mapper
                 "SELECT	COUNT(*)
 							FROM {$this->_tableToplist}
 							WHERE quiz_id = %d AND user_id = %d " . $c,
-                $quizId,
-                $userId
+                $args
             )
         );
     }
@@ -128,9 +128,14 @@ class WpProQuiz_Model_ToplistMapper extends WpProQuiz_Model_Mapper
         }
 
         $ids = array_map('intval', (array)$toplistIds);
+        $placeholders = implode(', ', array_fill(0, count($ids), '%d'));
 
-        return $this->_wpdb->query("DELETE FROM {$this->_tableToplist} WHERE quiz_id = {$quizId} AND toplist_id IN(" . implode(', ',
-                $ids) . ")");
+        return $this->_wpdb->query(
+            $this->_wpdb->prepare(
+                "DELETE FROM {$this->_tableToplist} WHERE quiz_id = %d AND toplist_id IN($placeholders)",
+                array_merge(array($quizId), $ids)
+            )
+        );
     }
 
 }

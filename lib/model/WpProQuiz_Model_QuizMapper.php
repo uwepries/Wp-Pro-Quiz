@@ -380,6 +380,12 @@ class WpProQuiz_Model_QuizMapper extends WpProQuiz_Model_Mapper
             $where .= ' AND id NOT IN(' . implode(', ', array_map('intval', (array)$outIds)) . ') ';
         }
 
+        foreach ($list as $entry) {
+            if (!preg_match('/^[a-zA-Z0-9_]+$/', $entry)) {
+                return null;
+            }
+        }
+
         return $this->_wpdb->get_results(
             "SELECT " . implode(', ', (array)$list) . " FROM {$this->_tableMaster} WHERE $where ORDER BY name",
             ARRAY_A
@@ -389,6 +395,10 @@ class WpProQuiz_Model_QuizMapper extends WpProQuiz_Model_Mapper
     public function fetchCol($ids, $col)
     {
         $ids = implode(', ', array_map('intval', (array)$ids));
+
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $col)) {
+            return null;
+        }
 
         return $this->_wpdb->get_col("SELECT {$col} FROM {$this->_tableMaster} WHERE id IN({$ids})");
     }

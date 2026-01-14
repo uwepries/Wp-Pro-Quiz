@@ -14,8 +14,13 @@ class WpProQuiz_Model_CategoryMapper extends WpProQuiz_Model_Mapper
 
         $r = array();
 
-        $results = $this->_wpdb->get_results("SELECT * FROM {$this->_tableCategory} WHERE type = '" . $type . "'",
-            ARRAY_A);
+        $results = $this->_wpdb->get_results(
+            $this->_wpdb->prepare(
+                "SELECT * FROM {$this->_tableCategory} WHERE type = %s",
+                $type
+            ),
+            ARRAY_A
+        );
 
         foreach ($results as $row) {
             $r[] = new WpProQuiz_Model_Category($row);
@@ -92,8 +97,13 @@ class WpProQuiz_Model_CategoryMapper extends WpProQuiz_Model_Mapper
 
         $r = array();
 
-        $results = $this->_wpdb->get_results("SELECT * FROM {$this->_tableCategory} WHERE type = '" . $type . "'",
-            ARRAY_A);
+        $results = $this->_wpdb->get_results(
+            $this->_wpdb->prepare(
+                "SELECT * FROM {$this->_tableCategory} WHERE type = %s",
+                $type
+            ),
+            ARRAY_A
+        );
 
         foreach ($results as $row) {
             $r[strtolower($row['category_name'])] = (int)$row['category_id'];
