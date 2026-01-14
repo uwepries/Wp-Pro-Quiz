@@ -63,7 +63,8 @@ class WpProQuiz_Controller_Admin
             //e.g. "9 de setembro de 2014" -> change to "hard" dateformat
             'dateFormat' => 'mm/dd/yy',
             'firstDay' => get_option('start_of_week'),
-            'isRTL' => $isRtl
+            'isRTL' => $isRtl,
+            'nonce' => wp_create_nonce('wpProQuiz_nonce')
         );
 
         wp_localize_script('wpProQuiz_admin_javascript', 'wpProQuizLocalize', $translation_array);

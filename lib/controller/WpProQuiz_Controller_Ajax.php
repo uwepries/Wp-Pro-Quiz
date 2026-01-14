@@ -29,6 +29,10 @@ class WpProQuiz_Controller_Ajax
 
     private function ajaxCallbackHandler($admin)
     {
+        if ($admin) {
+            check_ajax_referer('wpProQuiz_nonce', 'nonce');
+        }
+
         $func = isset($_POST['func']) ? $_POST['func'] : '';
         $data = isset($_POST['data']) ? $_POST['data'] : null;
         $calls = $admin ? $this->_adminCallbacks : $this->_frontCallbacks;

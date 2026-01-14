@@ -679,7 +679,8 @@ jQuery(document).ready(function ($) {
             var d = {
                 action: 'wp_pro_quiz_admin_ajax',
                 func: func,
-                data: data
+                data: data,
+                nonce: wpProQuizLocalize.nonce
             };
 
             $.post(ajaxurl, d, success, 'json');
@@ -1493,7 +1494,8 @@ jQuery(document).ready(function ($) {
             var d = {
                 action: 'wp_pro_quiz_admin_ajax',
                 func: func,
-                data: data
+                data: data,
+                nonce: wpProQuizLocalize.nonce
             };
 
             $.post(ajaxurl, d, success, 'json');
@@ -1812,7 +1814,8 @@ jQuery(document).ready(function ($) {
                 var d = {
                     action: 'wp_pro_quiz_admin_ajax',
                     func: func,
-                    data: data
+                    data: data,
+                    nonce: wpProQuizLocalize.nonce
                 };
 
                 $.post(ajaxurl, d, success, 'json');
