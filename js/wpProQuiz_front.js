@@ -976,10 +976,18 @@ wpProQuizReady(function () {
                     return (event.returnValue = 'Are you sure you want to exit?'); /* Need this for pseudo elements to work! */
                 });
 
-                var chk = jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0);
+                var chkObj = jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content');
+                var chk = chkObj.get(0);
                 if (chk && !jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).checked) {
-                    jQuery('input[type=checkbox][required=required]', '.wpProQuiz_content').get(0).scrollIntoView();
-                    window.setTimeout(function() { alert('Bitte die Prüfungsordnung akzeptieren!'); }, 100);
+                    chk.scrollIntoView();
+                    if (chkObj.attr('name') == 'pruefungsodnung_akzeptiert') {
+                        window.setTimeout(function() { alert('Bitte die Prüfungsordnung akzeptieren!'); }, 100);
+                    } else if (chkObj.attr('name') == 'datenweitergabe_akzeptiert') {
+                        window.setTimeout(function() { alert('Bitte die Datenweitergabe akzeptieren!'); }, 100);
+                    } else {
+                        window.setTimeout(function() { alert('Bitte die Checkbox aktivieren!'); }, 100);
+                    }
+
                     return chk;
                 };
 

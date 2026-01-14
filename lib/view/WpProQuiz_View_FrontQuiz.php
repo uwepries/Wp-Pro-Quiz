@@ -714,7 +714,10 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View
                 </p>
                 <hr/>
                 <p class="wpProQuiz_result">
-                    Leider haben Sie nicht bestanden
+                    Leider hast du nicht bestanden
+                </p>
+                <p class="wpProQuiz_back">
+                    <a href="/lernplattform-home/">Zurück zur Lernplattform</a>
                 </p>
             <?php } ?>
             <?php if ($this->quiz->isShowAverageResult()) { ?>

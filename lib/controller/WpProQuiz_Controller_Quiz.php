@@ -603,13 +603,18 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
             '$username' => $user->display_name,
             '$firstname' => $user->first_name,
             '$lastname' => $user->last_name,
+            '$first_name' => $user->first_name,
+            '$last_name' => $user->last_name,
             '$quizname' => $quiz->getName(),
             '$result' => $result['result'] . '%',
             '$points' => $result['points'],
             '$grade' => number_format((isset($result['grade']) ? $result['grade'] : (($result['result'] / 100) * 15.0)), 1, ',', ''),
             '$ip' => filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP),
-            '$categories' => empty($result['cats']) ? '' : $this->setCategoryOverview($result['cats'], $categories)
+            '$categories' => empty($result['cats']) ? '' : $this->setCategoryOverview($result['cats'], $categories),
+            '$successfully' => floatval($result['result']) >= 60.0 ? ' erfolgreich' : ' nicht erfolgreich',
+            '$goodsmith-code' => floatval($result['result']) >= 60.0 ? "\nHier geht es zu den LTZ Workshop Sets: https://good-smith.com/collections/ltz\n\nDer Code, um Zugang zu erhalten, lautet: \"GSXLTZ24\"\n\nIhr könnt euch bei Goodsmith als Partner registrieren und erhaltet dann Gewerbekonditionen und Zugang zu Infomaterialien etc. Auch könnt ihr euch auf der Karte listen lassen, sofern gewünscht. Das könnt ihr nach Registrierung in eurem Account einstellen. Die Registrierung wird für euch, nach bestandener Theorieprüfung, als LTZ Schüler automatisch freigeschaltet. Hier geht’s direkt zur Registrierung Gewerbetreibende: https://good-smith.com/pages/registrierung\n" : '',
         );
+        #ltz_send_telegram(var_export([__METHOD__, $result, $r], true));
 
         if ($quiz->isFormActivated() && $forms !== null) {
             foreach ($forms as $form) {
@@ -952,6 +957,9 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller
             update_user_meta(get_current_user_id(), "h_theorie{$quiz->getId()}", $note);
             update_user_meta(get_current_user_id(), "ch_theorie{$quiz->getId()}", $note);
         }
+
+        $user = wp_get_current_user();
+        do_action('wp_pro_quiz_completed_quiz_ltz', $quiz, $user, $data);
 
         if (!$ctr->isPreLockQuiz($quiz)) {
             $statistics = new WpProQuiz_Controller_Statistics();

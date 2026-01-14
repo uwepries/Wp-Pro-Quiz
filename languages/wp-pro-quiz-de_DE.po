@@ -16,7 +16,7 @@ msgstr ""
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:96
 msgid "Do you really want to delete the quiz/question?"
-msgstr "Wollen Sie die Prüfung/Frage wirklich löschen?"
+msgstr "Willst du die Prüfung/Frage wirklich löschen?"
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:97
 msgid "Title is not filled!"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:110
 msgid "You must specify a name."
-msgstr "Sie müssen einen Namen angeben."
+msgstr "Du musst einen Namen angeben."
 
 #: lib/controller/WpProQuiz_Controller_Admin.php:111
 msgid "This entry should really be deleted?"
@@ -198,7 +198,7 @@ msgstr "Kein Name oder keine E-Mail angegeben."
 
 #: lib/controller/WpProQuiz_Controller_Toplist.php:148
 msgid "You signed up successfully."
-msgstr "Sie haben sich erfolgreich eingetragen."
+msgstr "Du hast dich erfolgreich eingetragen."
 
 #: lib/controller/WpProQuiz_Controller_Toplist.php:156
 #: lib/controller/WpProQuiz_Controller_Toplist.php:160
@@ -211,7 +211,7 @@ msgstr "Ein Fehler ist aufgetreten."
 #: lib/controller/WpProQuiz_Controller_Toplist.php:198
 #: lib/controller/WpProQuiz_Controller_Toplist.php:207
 msgid "You can not enter again."
-msgstr "Sie können sich nicht erneut eintragen."
+msgstr "Du kannst dich nicht erneut eintragen."
 
 #: lib/controller/WpProQuiz_Controller_Toplist.php:215
 msgid "Your name can not exceed 15 characters."
@@ -268,7 +268,7 @@ msgid ""
 msgstr ""
 "LTZ-Prüfung\n"
 "\n"
-"Sie haben die Prüfung \"$quizname\" abgeschlossen.\n"
+"Du hast die Prüfung \"$quizname\" abgeschlossen.\n"
 "\n"
 "Punkte: $points\n"
 "Ergebnis: $result\n"
@@ -465,13 +465,13 @@ msgstr "Prüfung starten"
 msgid ""
 "You have already completed the quiz before. Hence you can not start it again."
 msgstr ""
-"Sie haben die Prüfung schon einmal absolviert. Daher können sie es nicht erneut "
+"Du hast die Prüfung schon einmal absolviert. Daher kannst du es nicht erneut "
 "starten."
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:82
 msgid "You have to finish following quiz, to start this quiz:"
 msgstr ""
-"Sie müssen erst folgende Prüfung beenden um diese Prüfung starten zu können:"
+"Du musst erst folgende Prüfung beenden um diese Prüfung starten zu können:"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:90
 #, php-format
@@ -489,7 +489,7 @@ msgstr "Zeit ist abgelaufen"
 #: lib/view/WpProQuiz_View_FrontQuiz.php:102
 #, php-format
 msgid "You have reached %s of %s points, (%s)"
-msgstr "Sie haben %s von %s Punkten erreicht (%s)"
+msgstr "Du hast %s von %s Punkten erreicht (%s)"
 
 #: lib/view/WpProQuiz_View_FrontQuiz.php:110
 msgid "Average score"
@@ -868,7 +868,7 @@ msgid ""
 "If you activate this option, all WpProQuiz-Javascript files are loaded in "
 "the header even if they are not needed."
 msgstr ""
-"Wenn Sie diese Option aktivieren, werden sämtliche WpProQuiz-Javascript-"
+"Wenn du diese Option aktivierst, werden sämtliche WpProQuiz-Javascript-"
 "Dateien im Header geladen, eine Unterscheidung ob die Javascript Dateien "
 "wirklich benötigt werden kann dann nicht mehr getroffen werden."
 
@@ -902,7 +902,7 @@ msgstr ""
 #: lib/view/WpProQuiz_View_GobalSettings.php:392
 msgid "If you have any problems with the Touch Library, please deactivate it."
 msgstr ""
-"Wenn Sie Probleme mit der Touch Library haben, können Sie dies hier "
+"Wenn du Probleme mit der Touch Library hast, kannst du dies hier "
 "deaktivieren."
 
 #: lib/view/WpProQuiz_View_GobalSettings.php:399
@@ -916,7 +916,7 @@ msgstr "Ist nur in seltenen Fällen erforderlich."
 
 #: lib/view/WpProQuiz_View_GobalSettings.php:414
 msgid "If you have problems with the front ajax, please activate it."
-msgstr "Wenn Sie Probleme mit dem Front AJAX haben, bitte aktivieren Sie es."
+msgstr "Wenn du Probleme mit dem Front AJAX hast, bitte aktiviere es."
 
 #: lib/view/WpProQuiz_View_GobalSettings.php:417
 msgid "e.g. Domain with special characters in combination with IE"
@@ -1075,7 +1075,7 @@ msgstr ""
 
 #: lib/view/WpProQuiz_View_QuestionEdit.php:143
 msgid "Here you can enter solution hint."
-msgstr "Hier können Sie einen Lösungstipp hinterlegen."
+msgstr "Hier kannst du einen Lösungstipp hinterlegen."
 
 #: lib/view/WpProQuiz_View_QuestionEdit.php:147
 msgid "Activate hint for this question?"
@@ -2197,7 +2197,7 @@ msgstr ""
 #~ msgstr "Frage überspringen"
 
 #, fuzzy
-#~ msgid "Sie muessen einen Namen angeben."
+#~ msgid "Du musst einen Namen angeben."
 #~ msgstr "You must specify a name."
 
 #, fuzzy
@@ -2372,7 +2372,7 @@ msgstr ""
 #~ msgid ""
 #~ "You have reached <span></span> of <span></span> points, (<span></span>%)"
 #~ msgstr ""
-#~ "Sie haben <span></span> von <span></span> Punkten erreicht (<span></span>"
+#~ "Du hast <span></span> von <span></span> Punkten erreicht (<span></span>"
 #~ "%)"
 
 #, fuzzy

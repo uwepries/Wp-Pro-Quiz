@@ -249,6 +249,7 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
         $startTime = (int)$data['dateFrom'];
         $endTime = (int)$data['dateTo'] ? $data['dateTo'] + 86400 : 0;
 
+        #ltz_send_telegram(var_export([$quizId, $start, $limit, $data['users'], $startTime, $endTime], true));
         $statisticModel = $statisticRefMapper->fetchHistory($quizId, $start, $limit, $data['users'], $startTime,
             $endTime);
 
